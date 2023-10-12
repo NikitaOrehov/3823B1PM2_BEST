@@ -1,3 +1,5 @@
 int get_time(long long angle) {
-    return 0; // Not implementation
+    int hour, minute, second, p;
+    hour = angle / 360;
+    p = angle % 360;
 }
