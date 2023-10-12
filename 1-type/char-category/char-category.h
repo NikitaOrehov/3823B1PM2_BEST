@@ -2,11 +2,9 @@
 
 
 bool is_digit(char x) {
-    return true; // No implementation
 }
 
 bool is_letter(char x) {
-    return true; // No implementation
 }
 
 bool is_punctuation(char x) {

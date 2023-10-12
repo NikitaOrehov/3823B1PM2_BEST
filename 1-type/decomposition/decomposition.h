@@ -1,5 +1,5 @@
 int reverse(int number) {
-    return 0; // Not implementation
+    
 }
 
 double decomposition(int number) {
