@@ -1,3 +1,7 @@
 unsigned char max_byte(unsigned short number) {
-    return 0; // Not implementation
+    unsigned short p = number >> 8;
+    unsigned short m = (unsigned char)number;
+    if (p > m) return p;
+    else return m;
+
 }

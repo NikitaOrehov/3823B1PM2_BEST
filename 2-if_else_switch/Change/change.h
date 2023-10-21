@@ -1,4 +1,5 @@
-long long change(int a, int b, long long int c, int d){
+long long change(int a, int b, int c, int d){
+    long long _c = c;
     long long int h = 100 * a + b, f;
     if (h > (100 * c + d)) return -1;
     else {
