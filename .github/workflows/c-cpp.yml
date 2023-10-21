@@ -205,13 +205,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/deadline
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
-          
-      - name: 2-if_else_switch clear
-        if: always()
-        shell: bash
-        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
-        run: python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -n
+          python3 fill_magazine.py -t "deadline" -r "$(echo $?)"
 
       - name: 2-if_else_switch Change
         if: always()
