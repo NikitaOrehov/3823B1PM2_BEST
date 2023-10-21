@@ -269,7 +269,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/twoboxes
-          python3 fill_magazine.py -t "twoboxes" -r "$(echo $?)"
+          python3 fill_magazine.py -t "TwoBoxes" -r "$(echo $?)"
 
       - name: 3-loop bin_patterns
         if: always()
