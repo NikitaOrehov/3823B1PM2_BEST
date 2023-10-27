@@ -1,8 +1,8 @@
 #include <math.h>
 
 char find_digit(double number, char digit){
-    if (digit >= 10) return -1;
-    int number2 = (int)number, i = 0;
+    if ((digit >= 10) || (digit < 0)) return -1;
+    long long int number2 = number, i = 0;
     char k = 0, count = 0;
     while (number2 >= 1){
         i += 1;
@@ -22,7 +22,6 @@ char find_digit(double number, char digit){
         global_count += 1;
         if (k == digit){
             return global_count;
-            break;
         }
     }
     if (global_count == 0) return -1;
