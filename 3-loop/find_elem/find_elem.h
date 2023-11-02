@@ -4,7 +4,7 @@ int find_elem(int left, int right, int number, int max_iter){
     int a = left;
     int i = 0; //Счётчик итераций
     int middle;
-    while (left <= right){
+    while (left < right){
         i += 1;
         middle = (left + right) / 2;
         if (number > middle){
