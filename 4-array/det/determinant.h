@@ -2,6 +2,7 @@
 
 int razbienie(int matrix[], int leng, int number);
 
+
 int determinant(int matrix[], int size){
     int leng = sqrt(size);
     int sum = 0;
