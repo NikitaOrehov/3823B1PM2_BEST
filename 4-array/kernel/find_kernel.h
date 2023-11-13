@@ -46,15 +46,9 @@ int find_matrix_kernel(int matrix[], int kernel[], int matrix_row, int matrix_co
             }
 
         }
-        matrix_row = sqrt(count);
-        matrix_col = sqrt(count);
+        matrix_row = matrix_row - kernel_row + 1;
+        matrix_col = matrix_col - kernel_col + 1;
         change_array(matrix, matrix2, count);
-        if (count < (kernel_row * kernel_col)) break;
-        if ((matrix_row * matrix_col) != count){
-            matrix_row = 3;
-            matrix_col = 7;
-        }
-
     }
     int otvet = 0;
     if (count == 1) return matrix[0];
