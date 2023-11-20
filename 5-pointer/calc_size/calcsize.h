@@ -1,12 +1,20 @@
 #include <math.h>
 
 int calcsize(void* memory){
-    int* p = (int*)memory;
-    int count = 1;
-    while ((*(p - 1) != 11) || (*p != 47)){
-        p += 1;
-        count += 1;
+    char* p = (char*)memory;
+    int i = 0, count = 0, kk = 0, ll = 0;
+    char number = 0;
+    while(kk == 0){
+        number = *(p + i);
+        if ((number == 11) && (count == 0)){
+            count = 1;
+        }
+        else if ((number == 47) && (count == 1)){
+            kk = 1;
+        }
+        else if ((number != 0) && (count == 1)) count = 0;
+        else if (number == 0 && count == 1) ll ++;
+        i++;
     }
-    return count;
+    return i + ll;
 }
-// 1 2 3 4 5 6
