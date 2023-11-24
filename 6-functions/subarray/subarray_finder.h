@@ -2,19 +2,22 @@
 
 
 int search(int* array, int array_size, int* subarray, int sub_size){
-    int index = 0, p;
+    int index = 0, p = 0, count = 0;
     for (int i = 0; i < array_size; i++){
         if (array[i] == subarray[0]){
             index = i;
             p = i + 1;
             for (int j = 1; j < sub_size; j++){
-                if (array[p] == subarray[j]);
+                if (array[p] == subarray[j]){
+                    count += 1;
+                    p += 1;
+                }
                 else{
                     index = -1;
                     break;
                 }
-            if (index != -1) return index;
             }
+            if (index != -1) return index;
         }
     }
     return -1;

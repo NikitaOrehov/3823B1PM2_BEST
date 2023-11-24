@@ -23,3 +23,4 @@ TEST_LIST = {
     {"Find subarray", test_subarray},
     {NULL, NULL}
 };
+
