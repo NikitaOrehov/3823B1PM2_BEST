@@ -98,7 +98,6 @@ int search(int** array, int* now_row, int* now_col, int* loops, coordinates old[
             *now_row = memory[i].row;
             *now_col = memory[i].col;
             XREHb = looops(array, now_row, now_col, old, length, size);
-            //XREHb = search(array, now_row, now_col, loops, old, length);
         }
     }
     return 0;
