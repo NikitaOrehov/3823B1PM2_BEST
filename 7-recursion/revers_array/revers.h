@@ -16,3 +16,4 @@ void reverse_array(int* array, int array_size){
     int count = -1;
     reverse(array, array_size, count);
 }
+//решено

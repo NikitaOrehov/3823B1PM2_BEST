@@ -9,3 +9,4 @@ double calc_sum_elements(int* array, int array_size){
     sum = calc_sum_elements(array, array_size - 1) + number;
     return sum;
 }
+//решено

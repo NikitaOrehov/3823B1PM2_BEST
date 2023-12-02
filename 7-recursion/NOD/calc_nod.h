@@ -6,3 +6,4 @@ int nod(int first, int second){
     else (second = nod(second, first % second));
     return second;
 }
+//решено
