@@ -21,5 +21,5 @@ double convert(char num[]){
     }
     if (minus == 1) number *= -1;
     return number;
+    
 }
-//46

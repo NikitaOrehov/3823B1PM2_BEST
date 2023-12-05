@@ -11,5 +11,6 @@ void DelSymbol1(char *str, char sym){
             i--;
         }
     }
+    
 }
 

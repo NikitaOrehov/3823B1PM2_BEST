@@ -7,6 +7,7 @@ int calculate_expression(char expression[]){
          flag = 2;
          count++;
     }
+    
     while (flag){
         number = 0;
         while(expression[count] != 43 && expression[count] != 45 && expression[count] != '\0'){

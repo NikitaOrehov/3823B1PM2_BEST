@@ -9,4 +9,5 @@ void lower(char* str){
         }
         count++;
     }
+    
 }
