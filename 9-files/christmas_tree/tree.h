@@ -1,9 +1,17 @@
 #include <math.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 char* tree_writer(int height){//входные данные
-    FILE* file = fopen("treee.txt", "w");
+    FILE* file = fopen("p.txt", "w");
+    char* answer = malloc(100);
+    answer[0] = 'p';
+    answer[1] = '.';
+    answer[2] = 't';
+    answer[3] = 'x';
+    answer[4] = 't';
+    answer[5] = '\0';
     int galochka = 0;
     for (int i = 0; i < height - 1; i++){
         fputs(" ", file);
@@ -31,15 +39,13 @@ char* tree_writer(int height){//входные данные
     for (int i = 0; i < height - 3; i++){
         fputs(" ", file);
     }
-    int podstavka = (height - 1) - (height - 3);
-    for (int i = 0; i < podstavka; i++){
-        fputs("_", file);
-    }
+    fputs("_", file);
+    fputs("_", file);
     fputs(" ", file);
-    for (int i = 0; i < podstavka; i++){
-        fputs("_", file);
-    }
-    return file;//Что возвращать?
+    fputs("_", file);
+    fputs("_", file);
+    fclose(file);
+    return answer; //Что возвращать?
 }
 
 

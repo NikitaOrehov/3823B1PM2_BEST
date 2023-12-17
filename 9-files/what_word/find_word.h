@@ -9,13 +9,14 @@ void check(char word[]){
     }
     int length = strlen(word);
     for (int i = 0; i < length; i++){
-        if (((word[i] >= 32) && (word[i] <= 47)) || ((word[i] >= 58) && (word[i] <= 64)) || word[i] == '\r'){
+        if (((word[i] >= 32) && (word[i] <= 47)) || ((word[i] >= 58) && (word[i] <= 64))){
             word[i] = '\0';
             return;
         }
     }
 
 }
+
 
 void check_array(char** words, char word[], int array[], int* len){
     int length = strlen(word);
@@ -37,6 +38,8 @@ void check_array(char** words, char word[], int array[], int* len){
 
 }
 
+
+
 char* get_word(char filename[], unsigned int how_many_times){
     char* word = malloc(100);// что если char word[50] Почему не удаляется?
     char** dictionary = malloc(sizeof(char*) * 1000);
@@ -44,11 +47,8 @@ char* get_word(char filename[], unsigned int how_many_times){
     FILE* p_file = fopen(filename, "r");
     while (feof(p_file) == 0){
         fscanf(p_file, "%s", word);
-        if (word == "young"){
-            int a = 0;
-            int b = 0;
-        }
         check(word);
+        if (strcmp(word, "of") == 0 || strcmp(word, "the") == 0 || strcmp(word, "a") == 0 || strcmp(word, "to") == 0 || strcmp(word, "at") == 0) continue;
         check_array(dictionary, word, array, &len);
     }
     char* answer = malloc(100);
@@ -66,4 +66,3 @@ char* get_word(char filename[], unsigned int how_many_times){
     free(word);
     return answer;
 }
-// 20-21
