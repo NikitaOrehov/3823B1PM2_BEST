@@ -1,28 +1,32 @@
 #include <math.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int* num_word){
-    int a;
-    int b;
-    int c;
-    int d;
     FILE* p_file = fopen(filename, "r");
     unsigned int count = 0;
     char sym;
+    *abzac_num = 0;
+    *num_word = 0;
     while (feof(p_file) == 0){
         sym = fgetc(p_file);
-        if ((int)sym == 32){
-            *num_word += 1;
+        if (sym == '\n'){//нахождение абзацев
+            sym = fgetc(p_file);
+            if (sym == '\n'){
+                *abzac_num += 1;
+            }
         }
         count++;
     }
-    *num_word += 1;
-    a = 10;
-    for (int i = 0; i < 2; i++){
-        a = i;
-    }
-    return count - 1;
+    fclose(p_file);
+    FILE* file = fopen(filename, "r");
+    char* word = malloc(100);
+    while (feof(file) == 0){
+        fscanf(file, "%s", word);
+        *num_word += 1;
+    }       
+    *abzac_num += 1;
+    fclose(file);
+    return count;//где потерян байт?
 }
-
-
