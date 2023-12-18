@@ -17,7 +17,7 @@ void check(char word[]){
 
 }
 
-
+//
 void check_array(char** words, char word[], int array[], int* len){
     int length = strlen(word);
     for (int i = 0; i < *len; i++){
