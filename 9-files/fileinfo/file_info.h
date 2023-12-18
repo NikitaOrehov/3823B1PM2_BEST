@@ -14,6 +14,7 @@ unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int
         if (sym == '\n'){//нахождение абзацев
             sym = fgetc(p_file);
             if (sym == '\n'){
+                count++;
                 *abzac_num += 1;
             }
         }
@@ -28,5 +29,5 @@ unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int
     }       
     *abzac_num += 1;
     fclose(file);
-    return count + 1;//где потерян байт?
+    return count - 1;//где потерян байт?
 }
