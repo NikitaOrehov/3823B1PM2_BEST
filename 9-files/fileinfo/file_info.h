@@ -28,5 +28,5 @@ unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int
     }       
     *abzac_num += 1;
     fclose(file);
-    return count;//где потерян байт?
+    return count + 1;//где потерян байт?
 }
