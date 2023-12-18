@@ -20,13 +20,15 @@ void check(char word[]){
 
 void check_array(char** words, char word[], int array[], int* len){
     int length = strlen(word);
-    char word_2[15];
-    if (word[length - 1] == 115){
-        strncpy(word_2, word, length - 1);
-    }
-    word_2[length - 1] = '\0';
     for (int i = 0; i < *len; i++){
-        if (strcmp(words[i], word) == 0 || strcmp(words[i], word_2) == 0){
+        if (strcmp(words[i], word) == 0 || strstr(word, words[i]) != NULL || strstr(words[i], word) != NULL){
+            int lenght2 = strlen(words[i]);
+            if (abs(lenght2 - length) > 1 && i == 46){
+                continue;
+            }
+            if (word[0] == '\0'){
+                continue;
+            }
             array[i]++;
             return;
         }
@@ -35,7 +37,6 @@ void check_array(char** words, char word[], int array[], int* len){
     strcpy(words[*len], word);
     array[*len] = 1;
     *len += 1;
-
 }
 
 
