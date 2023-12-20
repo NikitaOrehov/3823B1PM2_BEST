@@ -106,15 +106,15 @@ void write_smile(char filename[], char smile_names[]){
             files(file, word);
             lenght = 0;
             count++;
-            if (smile_names[count] != '\0'){
-                fputs("\n", file);
+            if (smile_names[count] == '\0'){
+                break;
+            }
+            else{
+                count++;
                 continue;
             }
         }
-        else if (smile_names[count] == 32){
-            count++;
-            continue;
-        }
+    
         else{
             word[lenght] = smile_names[count];
             lenght++;
@@ -123,4 +123,5 @@ void write_smile(char filename[], char smile_names[]){
     }
     word[lenght] = '\0';
     files(file, word);
+    fclose(file);
 }
