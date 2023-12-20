@@ -18,10 +18,25 @@ unsigned int parse_xml(char filename[], char company_name[]){
                 teg[lenght] = sym;
                 lenght++;
             }
-            if (strstr(teg, "Customer") != NULL){
-                if (strstr(teg, company_name) != NULL){
+            if (strcmp(teg, "CustomerID") == 0){//находим заказ
+                char Customer[40];
+                int lenght_customer = 0;
+                while(1){//смотрим чей заказ
+                    sym = getc(file);
+                    if (sym != 60){
+                        Customer[lenght_customer] = sym;
+                        lenght_customer++;
+                    }
+                    else{
+                        Customer[lenght_customer] = '\0';
+                        lenght_customer = 0;
+                        break;
+                    }
+                }
+                if (strcmp(Customer, company_name) == 0){
                     count++;
                 }
+
             }
             lenght = 0;
         }
