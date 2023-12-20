@@ -13,15 +13,8 @@ unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int
         sym = fgetc(p_file);
         if (sym == '\n'){//нахождение абзацев
             sym = fgetc(p_file);
-            if (sym == '\n'){
-                count++;
-                *abzac_num += 1;
-                count++;
-            }
-            else{
-                *abzac_num += 1;
-                count++;
-            }
+            count++;
+            *abzac_num += 1;
         }
         count++;
     }
