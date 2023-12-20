@@ -1,9 +1,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
-char* convert(double number){
-    char* text = malloc(40);
-    int number2 = 0;
-    
+char* convert(double number){  
 }

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 char* tree_writer(int height){//входные данные
-    FILE* file = fopen("p.txt", "w");
+    FILE* file = fopen("p.txt", "wb");
     char* answer = malloc(100);
     answer[0] = 'p';
     answer[1] = '.';

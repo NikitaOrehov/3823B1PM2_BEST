@@ -15,18 +15,26 @@ unsigned int get_fileinfo(char filename[], unsigned int* abzac_num, unsigned int
             sym = fgetc(p_file);
             if (sym == '\n'){
                 *abzac_num += 1;
+                count++;
+            }
+            else{
+                *abzac_num += 1;
+                count++;
             }
         }
         count++;
     }
     fclose(p_file);
     FILE* file = fopen(filename, "r");
-    char* word = malloc(100);
+    char* word = (char*)malloc(100);
     while (feof(file) == 0){
         fscanf(file, "%s", word);
+        if (strstr("1234567890", word) != NULL){
+             continue;
+        }
         *num_word += 1;
     }       
     *abzac_num += 1;
     fclose(file);
-    return count;//где потерян байт?
+    return count - 1;
 }
